@@ -1,7 +1,11 @@
-# klipper-backup 💾
-Klipper backup script for manual or automated GitHub backups
+# Voron 2.2 Afterburner — copia de configuración
 
-This is a backup script to create manual or automated klipper backups in a github repository. You can [see an example](https://github.com/Staubgeborener/3dprint) of what it looks like in the end.
+Impresora de JPixelV2. Backup reparado el 5 de noviembre de 2026.
 
-## RTFM
-I would suggest reading the [wiki](https://github.com/Staubgeborener/klipper-backup/wiki), as this provides detailed step-by-step instructions.
+La carpeta `voron-config/` contiene los archivos de `~/printer_data/config/`, con los enlaces de KAMP, Mainsail y timelapse convertidos en copias de su contenido para poder recuperarlos.
+
+Se excluyen `telegram.conf`, archivos de secretos y claves, temporales, archivos comprimidos y la carpeta OLD. Las credenciales se conservan por separado y no deben publicarse. El historial antiguo del repositorio puede contener credenciales previamente publicadas: deben revocarse.
+
+El backup usa Klipper-Backup y una clave SSH de escritura limitada a este repositorio. El ejecutor comprueba el acceso y verifica que el commit local coincide con GitHub. No copia configuraciones desde GitHub hacia la impresora.
+
+Para restaurar: conservar primero la configuración existente, descargar la revisión deseada de `voron-config/`, revisar compatibilidad con el hardware y las versiones instaladas, reponer los secretos por separado y copiar los archivos a `~/printer_data/config/`. Revisar los componentes de Moonraker y las extensiones de Klipper antes de reiniciar. Este repositorio no sustituye una imagen completa de la tarjeta SD.
